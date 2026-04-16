@@ -21,7 +21,8 @@ function logout() {
 <template>
   <div class="shell">
     <aside class="sidebar">
-      <div>
+      <div class="sidebar-branding">
+        <img src="/logo/logo.png" alt="Smart Gate Logo" class="sidebar-logo" />
         <p class="eyebrow">Smart Gate</p>
         <h1>Portal Control</h1>
       </div>

@@ -54,7 +54,11 @@ async function verifyEntry(req, res, next) {
       executionLog.filter1_result = 'DENIED_UNREGISTERED_MAC';
       console.log('RESPONSE:', executionLog.filter1_result);
       console.log('='.repeat(80));
-      return res.status(200).send('DENIED_UNREGISTERED_MAC');
+      return res.status(200).json({
+        decision: 'REJECTED',
+        ocr_plate: null,
+      })
+      //return res.status(200).send('DENIED_UNREGISTERED_MAC');
     }
     console.log('✅ FILTER 1 PASSED - MAC Address registered');
     executionLog.steps.push({ step: 'filter1_mac_validation', status: 'PASS', result: clientRows[0] });

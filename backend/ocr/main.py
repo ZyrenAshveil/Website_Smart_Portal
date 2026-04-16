@@ -101,7 +101,7 @@ def clean_and_format(ocr_detail):
     text = "".join([item[1] for item in ocr_detail]).upper()
     return re.sub(r'[^A-Z0-9]', '', text)
 
-
+#Regex untuk normalisasi: 1-2 huruf, diikuti oleh 1-4 angka atau huruf O/I/S/B, diikuti oleh 0-3 huruf
 def normalize_plate(text):
     match = re.search(r'([A-Z]{1,2})(\d{1,4}|[OISB]{1,4})([A-Z]{0,3})', text)
     if match:
